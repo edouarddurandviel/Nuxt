@@ -1,1 +1,1 @@
-export default defineEventHandler(event => parseCookies(event))
+export default defineEventHandler(event => parseCookies(event));

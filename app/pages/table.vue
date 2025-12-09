@@ -2,7 +2,7 @@
   <section>
     <p>This page will be displayed at the /table route.</p>
     <p>{{ data && 'posted' }}</p>
-     <p>{{ !error && 'no errors' }}</p>
+    <p>{{ !error && 'no errors' }}</p>
   </section>
 </template>
 
@@ -14,23 +14,26 @@ const route = useRoute();
 // backend query => sends automaticaly headers
 // db queries
 const { data, error } = await useAsyncData(`table`, () => {
-  return postAbout('table', { id: '656546', content: "new content" })
-})
+  return postAbout('table', { id: '656546', content: 'new content' });
+});
 
-const { data: usersAndRoles, status } = await useAsyncData('users-roles', async (_nuxtApp, { signal }) => {
-  const [users, roles] = await Promise.all([
-    $fetch('/users', { signal }),
-    $fetch('/roles', { signal }),
-  ])
+const { data: usersAndRoles, status } = await useAsyncData(
+  'users-roles',
+  async (_nuxtApp, { signal }) => {
+    const [users, roles] = await Promise.all([
+      $fetch('/users', { signal }),
+      $fetch('/roles', { signal }),
+    ]);
 
-  return { users, roles }
-})
+    return { users, roles };
+  },
+);
 
-  const meta = {
+const meta = {
   title: `Post ${route.params.id}`,
   description: `Post ${route.params.id} description`,
-  content: `Post ${route.params.id}, an amazing site`
-}
+  content: `Post ${route.params.id}, an amazing site`,
+};
 
 useHead({
   title: 'About',
@@ -49,6 +52,4 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 });
-
 </script>
-

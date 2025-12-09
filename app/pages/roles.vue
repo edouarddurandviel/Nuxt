@@ -13,16 +13,16 @@ const { data, status } = await useAsyncData('users-roles', async (_nuxtApp, { si
   const [users, roles] = await Promise.all([
     $fetch('/users', { signal }),
     $fetch('/roles', { signal }),
-  ])
+  ]);
 
-  return { users, roles }
-})
+  return { users, roles };
+});
 
-  const meta = {
+const meta = {
   title: `Post ${route.params.id}`,
   description: `Post ${route.params.id} description`,
-  content: `Post ${route.params.id}, an amazing site`
-}
+  content: `Post ${route.params.id}, an amazing site`,
+};
 
 useHead({
   title: 'About',
@@ -41,6 +41,4 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 });
-
 </script>
-

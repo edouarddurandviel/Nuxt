@@ -1,7 +1,4 @@
-<template>
-
-  post 1
-</template>
+<template>post 1</template>
 
 <script setup lang="ts">
 const route = useRoute();
@@ -9,8 +6,8 @@ const route = useRoute();
 const data = {
   title: `Post ${route.params.id}`,
   description: `Post ${route.params.id} description`,
-  content: `Post ${route.params.id}, an amazing site`
-}
+  content: `Post ${route.params.id}, an amazing site`,
+};
 
 useSeoMeta({
   title: data.title,
@@ -34,6 +31,6 @@ definePageMeta({
   validate(route) {
     // Check if the id is made up of digits
     return typeof route.params.id === 'string' && /^\d+$/.test(route.params.id);
-  }
+  },
 });
 </script>

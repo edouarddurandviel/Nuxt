@@ -56,7 +56,6 @@
       </div>
     </div>
   </div>
-  
 
   <div class="bg-black py-vh-3">
     <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">

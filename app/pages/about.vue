@@ -2,8 +2,8 @@
   <section>
     <p>This page will be displayed at the /about route.</p>
     <p>{{ data?.title }}</p>
-     <p>{{ data?.intro }}</p>
-      <p>{{ data?.article }}</p>
+    <p>{{ data?.intro }}</p>
+    <p>{{ data?.article }}</p>
   </section>
 </template>
 
@@ -13,14 +13,14 @@ const route = useRoute();
 const { data, pending, error } = await useFetch('/api/about', {
   server: true,
   lazy: false,
-  query: { key: 'about' }
-})
+  query: { key: 'about' },
+});
 
-  const meta = {
+const meta = {
   title: `Post ${route.params.id}`,
   description: `Post ${route.params.id} description`,
-  content: `Post ${route.params.id}, an amazing site`
-}
+  content: `Post ${route.params.id}, an amazing site`,
+};
 
 useHead({
   title: 'About',
@@ -39,6 +39,4 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 });
-
 </script>
-
