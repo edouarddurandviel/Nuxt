@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+  font-family: 'FarAwayGalaxy';
+  src: url('/fonts/FarAwayGalaxy.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+}
