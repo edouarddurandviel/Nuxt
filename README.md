@@ -19,6 +19,11 @@ yarn install
 # bun
 bun install
 ```
+Create a default .env and set these variables
+```yaml
+API_BASE="/"
+API_SECRETS="XXXXXX"
+```
 
 ## Development Server
 
